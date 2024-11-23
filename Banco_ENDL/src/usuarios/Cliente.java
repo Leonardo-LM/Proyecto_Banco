@@ -1,6 +1,10 @@
 package usuarios;
 
+import tarjetas.Tarjeta;
+
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Cliente {
     public String nombre;
@@ -11,17 +15,35 @@ public class Cliente {
     public LocalDate fechaRegistro;
     public String sucursal;
     public double saldo;
+    ArrayList<Tarjeta> tarjetas = new ArrayList<>();
+    Random rand = new Random();
 
-    public Cliente(String nombre, String apellido, String RFC, String CURP, String email, double saldo) {
+    public Cliente(String nombre, String apellido, String RFC, String CURP, String email, LocalDate fechaRegistro, String sucursal, double saldo, ArrayList<Tarjeta> tarjetas) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.RFC = RFC;
         this.CURP = CURP;
         this.email = email;
-        this.fechaRegistro = LocalDate.now();
-        this.sucursal = "GERMANS CUMS";
+        this.fechaRegistro = fechaRegistro;
+        this.sucursal = sucursal;
         this.saldo = saldo;
+        this.tarjetas = tarjetas;
     }
+
+    public void generarTarjetaDebito() {
+        int digitos1 = rand.nextInt(9);
+        int digitos2 = rand.nextInt(9);
+        int digitos3 = rand.nextInt(9);
+        int digitos4 = rand.nextInt(9);
+
+        System.out.println(String.format("%d %d %d %d", digitos1, digitos2, digitos3, digitos4));
+    }
+
+
+    public void generarTarjetaCredito() {
+    }
+
+    //-------------------------SETTER & GETTER-----------------------------------
 
     public String getNombre() {
         return nombre;

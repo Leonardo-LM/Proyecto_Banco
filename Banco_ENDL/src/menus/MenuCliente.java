@@ -1,13 +1,16 @@
 package menus;
 
+import Operaciones_Bancarias.Banco;
 import usuarios.Cliente;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MenuCliente {
+    Banco banco = new Banco();
     public ArrayList<Cliente> clientes = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
+
 
     public void mostrarMenuCliente() {
         for (Cliente cliente : clientes) {
@@ -24,6 +27,11 @@ public class MenuCliente {
 
                     switch (opcion) {
                         case 1:
+                            System.out.print("Digite el numero de la tarjeta:");
+                            double numeroTarjeta = sc.nextDouble();
+
+                            banco.validarNumeroTarjetaDebito(numeroTarjeta);
+
                             System.out.print("Digite la cantidad a depositar: ");
                             double deposito = sc.nextDouble();
 
