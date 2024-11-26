@@ -1,9 +1,6 @@
-package usuarios;
-
-import enums.Rol;
+package usuarios.empleados;
 
 import javax.management.relation.Role;
-import java.time.LocalDate;
 
 public class Empleado {
     public String nombre;

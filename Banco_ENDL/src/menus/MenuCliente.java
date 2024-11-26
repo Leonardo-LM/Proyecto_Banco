@@ -1,7 +1,7 @@
 package menus;
 
 import Operaciones_Bancarias.Banco;
-import usuarios.Cliente;
+import usuarios.clientes.Cliente;
 
 import java.util.ArrayList;
 import java.util.Scanner;
