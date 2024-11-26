@@ -42,7 +42,7 @@ public class Login {
 
             Usuario usuarioEnSesion = banco.validarInicioSesion(usuario, contasena);
 
-            if (usuarioEnSesion instanceof Usuario) {
+            /*if (usuarioEnSesion instanceof Usuario) {
 
                 if (usuarioEnSesion.getRol() == Rol.CLIENTE) {
                     Cliente clienteEnSesion = (Cliente) usuarioEnSesion;
@@ -59,13 +59,13 @@ public class Login {
                 intentosUsuario = mostrarErrorInicioSesion(intentosUsuario);
 
             }
-        }
+        }*/
         System.out.println("Intentos maximos permitidos ");
     }
 
-    private int mostrarErrorInicioSesion(int intentosUsuario) {
+    /*private int mostrarErrorInicioSesion(int intentosUsuario) {
         System.out.println("Usuario o contraseña incorrectos, intenta de nuevo");
         return intentosUsuario + 1;
-    }
+    }*/}
 
 }

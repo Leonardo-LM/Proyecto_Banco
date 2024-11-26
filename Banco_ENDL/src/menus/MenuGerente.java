@@ -41,7 +41,7 @@ public class MenuGerente {
                 String nombre = scanner.next();
                 System.out.print("Apellido del cliente: ");
                 String apellido = scanner.next();
-                String RFC = ;
+                String RFC = "t";
                 String CURP = scanner.next();
                 String email = scanner.next();
                 LocalDate fechaRegistro = LocalDate.parse(scanner.next());
