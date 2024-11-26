@@ -1,5 +1,6 @@
 package menus;
 
+<<<<<<< HEAD
 import Operaciones_Bancarias.Banco;
 import usuarios.gerentes.Gerente;
 import utils.Rol;
@@ -10,6 +11,10 @@ import menus.*;
 
 
 import java.util.Scanner;
+=======
+import enums.Rol;
+import usuarios.Cliente;
+>>>>>>> 583a7ceb6070bfd8b5b4e6ccc8fd34bbcd05ef68
 
 public class Login {
     private final Scanner scanner = new Scanner(System.in);

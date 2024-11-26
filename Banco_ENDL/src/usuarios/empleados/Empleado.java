@@ -1,6 +1,10 @@
 package usuarios.empleados;
 
+<<<<<<< HEAD
 import utils.Rol;
+=======
+import javax.management.relation.Role;
+>>>>>>> 583a7ceb6070bfd8b5b4e6ccc8fd34bbcd05ef68
 
 public class Empleado {
     public String nombre;
