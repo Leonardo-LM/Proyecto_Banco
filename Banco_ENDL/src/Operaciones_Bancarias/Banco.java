@@ -1,7 +1,9 @@
 package Operaciones_Bancarias;
 
-import enums.Rol;
-import usuarios.Gerente;
+import usuarios.Usuario;
+import usuarios.gerentes.Gerente;
+
+import java.time.LocalDate;
 
 public class Banco {
     public Gerente gerenteDefault;
@@ -11,11 +13,30 @@ public class Banco {
     }
 
     //Metodos
-    /*public String generarRFC() {
-        char l1 = nombre.charAt(0);
+    public String generarRFC(String nombre, String apellido, LocalDate fechaRegistro) {
+        char letraIApellPaterno = apellido.charAt(0);
+        boolean vocal = false;
+        int i = 0;
+        String cadena="";
+        while(i < apellido.length() & !vocal){
+            if((apellido.charAt(i) == 'a') ||
+                    (apellido.charAt(i) == 'e')  ||
+                    (apellido.charAt(i) == 'i') ||
+                    (apellido.charAt(i) == 'o') ||
+                    (apellido.charAt(i) == 'u')) {
 
+                cadena +=apellido.charAt(i);
+                vocal = true;
+
+            }
+            i++;
+        }
 
 
         return RFC;
-    }*/
+    }
+    public Usuario validarInicioSesion(String idUser, String contrasena){
+
+        return null;
+    }
 }

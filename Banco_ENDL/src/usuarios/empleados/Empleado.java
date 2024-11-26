@@ -1,9 +1,6 @@
-package usuarios;
+package usuarios.empleados;
 
-import enums.Rol;
-
-import javax.management.relation.Role;
-import java.time.LocalDate;
+import utils.Rol;
 
 public class Empleado {
     public String nombre;
@@ -13,9 +10,9 @@ public class Empleado {
     public String email;
     public String sucursal;
     private double salario;
-    public Role rol;
+    public Rol rol;
 
-    public Empleado(String nombre, String apellido, String RFC, String CURP, String email, String sucursal, double salario, Role rol) {
+    public Empleado(String nombre, String apellido, String RFC, String CURP, String email, String sucursal, double salario, Rol rol) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.RFC = RFC;

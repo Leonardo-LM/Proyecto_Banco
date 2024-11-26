@@ -1,4 +1,7 @@
 package tarjetas;
 
-public class Debito {
+public class Debito extends Tarjeta{
+    public Debito() {
+        super();
+    }
 }

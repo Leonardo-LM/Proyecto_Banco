@@ -1,4 +1,4 @@
-package usuarios;
+package usuarios.ejecutivos;
 
 public class Ejecutivo {
 

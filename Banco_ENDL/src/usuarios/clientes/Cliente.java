@@ -1,4 +1,6 @@
-package usuarios;
+package usuarios.clientes;
+
+import utils.Rol;
 
 import java.time.LocalDate;
 
@@ -10,6 +12,8 @@ public class Cliente {
     public String email;
     public LocalDate fechaRegistro;
     public String sucursal;
+    public Rol rol;
+
 
     public Cliente(String nombre, String apellido, String RFC, String CURP, String email, LocalDate fechaRegistro, String sucursal) {
         this.nombre = nombre;
@@ -19,6 +23,7 @@ public class Cliente {
         this.email = email;
         this.fechaRegistro = LocalDate.now();
         this.sucursal = "GERMANS CUMS";
+        this.rol = Rol.CLIENTE;
     }
 
 

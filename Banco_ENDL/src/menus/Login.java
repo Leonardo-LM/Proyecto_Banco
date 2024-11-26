@@ -1,13 +1,33 @@
 package menus;
 
+import Operaciones_Bancarias.Banco;
+import usuarios.gerentes.Gerente;
+import utils.Rol;
+import usuarios.*;
+import usuarios.clientes.Cliente;
+import usuarios.empleados.Empleado;
+import menus.*;
+
+
+import java.util.Scanner;
+
 public class Login {
+    private final Scanner scanner = new Scanner(System.in);
+    private final Banco banco = new Banco();
+    public MenuEjecutivo menuEjecutivo= new MenuEjecutivo();
+    public MenuGerente menuGerente= new MenuGerente();
 
     public void login() {
-
         int intesntosMax = 5, intentosUsuario = 0;
 
-        //Para empezar con el menu del admin
-        this.mostrarMenuAdmin(cine.administradorPredeterminado);
+        MenuCliente menuCliente= new MenuCliente();
+
+        int opc;
+        do {
+            opc = menuGerente.mostrarMenu(banco.gerenteDefault);
+            menuGerente.procesarDatosMenu(opc, banco.gerenteDefault, banco);
+        }while (opc != 13);
+
 
         while (intentosUsuario < intesntosMax) {
             System.out.print("\n--------Bienvenido/a--------\n");
@@ -18,20 +38,20 @@ public class Login {
             String usuario = scanner.nextLine();
 
             System.out.println("Ingresa tu contaseña : ");
-            String contaseña = scanner.nextLine();
+            String contasena = scanner.nextLine();
 
-            Usuario usuarioEnSesion = cine.validarInicioSesion(usuario, contaseña);
+            Usuario usuarioEnSesion = banco.validarInicioSesion(usuario, contasena);
 
             if (usuarioEnSesion instanceof Usuario) {
 
                 if (usuarioEnSesion.getRol() == Rol.CLIENTE) {
                     Cliente clienteEnSesion = (Cliente) usuarioEnSesion;
-                    this.mostrarMenuCliente(clienteEnSesion);
+                    menuCliente.MenuCliente(clienteEnSesion);
                     intentosUsuario = 0;
                 } else if (usuarioEnSesion.getRol() == Rol.EMPLEADO) {
                     Empleado empleadoEnSesion = (Empleado) usuarioEnSesion;
                 } else {
-                    Administrador adminEnSesion = (Administrador) usuarioEnSesion;
+                    Gerente adminEnSesion = (Administrador) usuarioEnSesion;
                     this.mostrarMenuAdmin(adminEnSesion);
                     intentosUsuario = 0;
                 }

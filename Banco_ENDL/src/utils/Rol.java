@@ -1,7 +1,10 @@
-package enums;
+package utils;
 
 public enum Rol {
     CLIENTE,
     GERENTE,
     EJECUTIVO
+
+
 }
+
